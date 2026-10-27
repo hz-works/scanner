@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="الماسح">
+<meta name="theme-color" content="#5b3df5">
+<title>الماسح الحلال</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235b3df5'/%3E%3Cpath d='M14 42 L26 30 L34 36 L50 20' stroke='%23fff' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+:root{
+  --bg:#f4f2ff;--card:#fff;--ink:#17142b;--muted:#6b6785;--line:#e7e3f7;
+  --brand:#5b3df5;--brand2:#ff5ca8;--green:#0ea56f;--green-bg:#e3f8ef;--amber:#d98a00;--amber-bg:#fff4dc;
+  --red:#e0414b;--blue:#2f7cf6;--blue-bg:#e6f0ff;--shadow:0 6px 24px rgba(60,40,160,.08);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#110f1f;--card:#1c1930;--ink:#f2f0ff;--muted:#a19dc0;--line:#2c2846;
+  --green-bg:#0f3327;--amber-bg:#3a2a07;--blue-bg:#13264a;--shadow:none}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,"SF Arabic","Segoe UI","Noto Sans Arabic",Tahoma,sans-serif;padding-bottom:84px}
+a{color:inherit}
+.hero{background:linear-gradient(135deg,var(--brand),#8a3df5 55%,var(--brand2));color:#fff;padding:22px 16px 26px;border-radius:0 0 26px 26px}
+.hero h1{margin:0;font-size:22px}
+.hero .sub{opacity:.9;font-size:13px;margin-top:2px}
+.btns{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.btn{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;padding:9px 14px;border-radius:12px;font-weight:600;font-size:14px}
+.btn.solid{background:#fff;color:var(--brand)}
+.mkt{display:flex;gap:8px;overflow-x:auto;margin-top:14px;padding-bottom:2px}
+.mkt div{background:rgba(255,255,255,.14);border-radius:12px;padding:7px 11px;white-space:nowrap;font-size:12.5px}
+.mkt b{font-size:14px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:-14px 0 10px}
+.stat{background:var(--card);border-radius:16px;padding:10px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:22px}
+.stat span{font-size:12px;color:var(--muted)}
+.chips{display:flex;gap:6px;overflow-x:auto;margin:12px 0 4px;padding-bottom:4px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:13.5px;white-space:nowrap;cursor:pointer}
+.chip.on{background:var(--ink);color:var(--card);border-color:var(--ink)}
+h2{font-size:17px;margin:20px 0 8px}
+.card{background:var(--card);border-radius:20px;padding:14px;margin:10px 0;box-shadow:var(--shadow);border:1px solid var(--line)}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.tk{font-size:20px;font-weight:800;letter-spacing:.3px}
+.nm{color:var(--muted);font-size:12.5px}
+.badge{font-size:12px;border-radius:999px;padding:3px 9px;font-weight:700;white-space:nowrap}
+.b-buy{background:var(--green-bg);color:var(--green)}
+.b-prep{background:var(--blue-bg);color:var(--blue)}
+.b-wait{background:var(--amber-bg);color:var(--amber)}
+.b-new{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.tag{font-size:12px;background:var(--bg);border-radius:8px;padding:3px 8px;color:var(--muted)}
+.action{font-weight:800;font-size:16px;margin:6px 0 2px}
+.zone{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}
+.zone div{background:var(--bg);border-radius:12px;padding:7px;text-align:center}
+.zone small{display:block;color:var(--muted);font-size:11.5px}
+.zone b{font-size:15px}
+.zone i{font-style:normal;color:var(--muted);font-size:11px}
+svg.spark{width:100%;height:84px;display:block;margin:4px 0}
+.why{font-size:13.5px;margin:6px 0}
+.warn{font-size:13px;color:var(--amber);font-weight:600}
+.sh{font-size:12.5px;color:var(--muted)}
+.meta{display:flex;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:6px}
+.links{margin-top:8px;display:flex;gap:12px;font-size:13px}
+.links a{color:var(--brand);text-decoration:none;font-weight:600}
+.empty{color:var(--muted);text-align:center;padding:26px 10px}
+.box{background:var(--card);border-radius:18px;padding:14px 16px;margin:10px 0;border:1px solid var(--line)}
+.box p{margin:6px 0}
+.box ol{padding-inline-start:20px;margin:6px 0}
+nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
+nav button{background:none;border:0;color:var(--muted);font:inherit;font-size:12px;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:2px 10px}
+nav button span{font-size:21px;line-height:1}
+nav button.on{color:var(--brand);font-weight:700}
+.tab{display:none}.tab.on{display:block}
+.drop{font-size:13px;color:var(--muted)}
+.foot{color:var(--muted);font-size:12px;text-align:center;margin:20px 0}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap" style="padding:0">
+    <h1>🌙 الماسح الحلال</h1>
+    <div class="sub" id="upd">جارٍ التحميل…</div>
+    <div class="btns">
+      <a class="btn solid" id="runBtn" target="_blank" rel="noopener">🔄 امسح السوق الآن</a>
+      <a class="btn" id="lookBtn" target="_blank" rel="noopener">🔍 افحص سهم</a>
+    </div>
+    <div class="mkt" id="mkt"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="tab on" id="t-opps">
+    <div class="stats" id="stats"></div>
+    <div class="chips" id="chips"></div>
+    <div id="list"></div>
+    <div id="dropped"></div>
+  </section>
+
+  <section class="tab" id="t-look">
+    <h2>🔍 فحص سهم</h2>
+    <div class="box">
+      <p>لفحص أي سهم: اضغط <b>«افحص سهم»</b> ← <b>Run workflow</b> ← اكتب الرمز (مثل <b>ADBE</b>) ← <b>Run workflow</b>.</p>
+      <p>النتيجة تظهر هنا بعد ٢–٣ دقائق. اسحب الصفحة للتحديث.</p>
+    </div>
+    <div id="looks"></div>
+  </section>
+
+  <section class="tab" id="t-how">
+    <h2>📘 كيف يعمل الماسح</h2>
+    <div class="box">
+      <p><b>١. الأسهم:</b> كل الأسهم الأمريكية فوق ٢ مليار دولار (حوالي ١٥٠٠ سهم)، بدون البنوك والتأمين والتمويل التقليدي.</p>
+      <p><b>٢. الاستراتيجيات أولًا:</b></p>
+      <ol>
+        <li><b>ارتداد في اتجاه صاعد:</b> سهم من أقوى ٣٠٪ أداءً خلال سنة، فوق متوسط ٢٠٠ يوم، نزل إلى المتوسط الذي احترمه تاريخيًا (اختبار ٥ سنوات).</li>
+        <li><b>ما بعد الأرباح القوية (PEAD):</b> قفزة ٥٪+ بحجم تداول مضاعف بعد أرباح فاقت التوقعات، ثم أول تراجع خلال ٢–٢٠ يومًا مع بقائه فوق قاع يوم القفزة.</li>
+        <li><b>جودة بسعر مخفّض:</b> أقل من قمته بـ ٢٠–٤٠٪، هامش ربح أو عائد على حقوق المساهمين ١٥٪+، تدفق نقدي حر موجب، إيرادات نامية، ومكرر أرباح معقول، وبدأ يستقر.</li>
+      </ol>
+      <p><b>٣. ثم الفحص الشرعي على الناتج فقط:</b> القطاع، الديون &lt; ٣٠٪، النقد &lt; ٣٠٪ من القيمة السوقية (معايير AAOIFI).<br>
+      ✅ = ضمن صناديق الشريعة HLAL أو SPUS · 🟡 = نجح بالفحص الأولي، أكّد نسبة الإيرادات المحرّمة (Zoya) قبل الشراء · ❌ = يُحذف.</p>
+      <p><b>قواعد الحماية:</b> لا شراء قبل الأرباح بـ ٥ أيام (إلا PEAD) · الشراء على ٣ دفعات · حد أقصى ٨٪ للسهم · إذا كسر المنطقة بوضوح: أوقف التعزيز وراجع.</p>
+      <p><b>الأسعار:</b> باليورو تقريبيًا (حسب سعر الصرف)، وبين قوسين بالدولار. البيانات من Yahoo Finance بسعر الإغلاق.</p>
+      <p class="sh">أداة تعليمية وليست نصيحة مالية. القرار النهائي لك دائمًا.</p>
+    </div>
+  </section>
+  <div class="foot" id="foot"></div>
+</main>
+
+<nav>
+  <button class="on" data-t="opps"><span>🎯</span>الفرص</button>
+  <button data-t="look"><span>🔍</span>فحص سهم</button>
+  <button data-t="how"><span>📘</span>الطريقة</button>
+</nav>
+
+<script>
+const REPO = location.hostname.endsWith("github.io")
+  ? location.hostname.split(".")[0] + "/" + (location.pathname.split("/")[1] || "scanner") : "hz-works/scanner";
+const WF = `https://github.com/${REPO}/actions/workflows/scan.yml`;
+document.getElementById("runBtn").href = WF;
+document.getElementById("lookBtn").href = WF;
+let D = null, filt = "all";
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const eur = (e, u) => e != null ? `<bdi dir="ltr">€${fmt(e)}</bdi>` + (u != null ? `<br><i><bdi dir="ltr">$${fmt(u)}</bdi></i>` : "") : (u != null ? `<bdi dir="ltr">$${fmt(u)}</bdi>` : "—");
+const fmt = n => n == null ? "—" : Number(n).toLocaleString("en-US", {maximumFractionDigits: n >= 100 ? 1 : 2});
+const ago = iso => { const m = (Date.now() - new Date(iso)) / 6e4; return m < 60 ? `قبل ${Math.round(m)} دقيقة` : m < 1440 ? `قبل ${Math.round(m/60)} ساعة` : `قبل ${Math.round(m/1440)} يوم`; };
+const when = iso => new Date(iso).toLocaleString("ar", {weekday:"long", hour:"2-digit", minute:"2-digit", timeZone:"Europe/Berlin"});
+
+function spark(r) {
+  const p = r.spark || []; if (p.length < 5) return "";
+  const ma = r.spark_ma || [];
+  const vals = p.concat([r.zone_low, r.zone_high]).concat(ma.filter(x => x != null)).filter(x => x != null);
+  const lo = Math.min(...vals), hi = Math.max(...vals), W = 300, H = 84, pad = 4;
+  const y = v => H - pad - (v - lo) / (hi - lo || 1) * (H - 2 * pad), x = i => i / (p.length - 1) * W;
+  const path = arr => arr.map((v, i) => v == null ? null : `${x(i)},${y(v)}`).filter(Boolean).join(" ");
+  const up = p[p.length - 1] >= p[0];
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+    <rect x="0" y="${y(r.zone_high)}" width="${W}" height="${Math.max(2, y(r.zone_low) - y(r.zone_high))}" fill="#0ea56f" opacity=".14"/>
+    ${ma.length ? `<polyline points="${path(ma)}" fill="none" stroke="#f08c00" stroke-width="1.6" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/>` : ""}
+    <polyline points="${path(p)}" fill="none" stroke="${up ? "#5b3df5" : "#e0414b"}" stroke-width="2.2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <circle cx="${x(p.length - 1)}" cy="${y(p[p.length - 1])}" r="3.5" fill="${up ? "#5b3df5" : "#e0414b"}"/></svg>`;
+}
+
+function card(r, look) {
+  const st = r.status === "in" && r.action.startsWith("اشترِ") ? ["b-buy", "🟢 اشترِ"] :
+             r.action.startsWith("جهّز") ? ["b-prep", "🔵 جهّز أمر"] : ["b-wait", "🟠 انتظر"];
+  const zl = r.zone_low_eur ?? r.zone_low, zh = r.zone_high_eur ?? r.zone_high;
+  const ex = r.extra || {};
+  return `<div class="card">
+    <div class="top"><div><div class="tk">${esc(r.ticker)} <span style="font-size:15px">${r.shariah || ""}</span></div><div class="nm">${esc(r.name)} · ${esc(r.sector || "")}</div></div>
+      <div style="text-align:left">${r.is_new && !look ? `<span class="badge b-new">جديد</span> ` : ""}<span class="badge ${st[0]}">${st[1]}</span></div></div>
+    <div class="action">${esc(r.action)}</div>
+    <div class="tags"><span class="tag">🎯 ${esc(r.strategy_ar || "")}</span>${r.score ? `<span class="tag">قوة الإشارة ${r.score}/100</span>` : ""}
+      ${ex.conf ? `<span class="tag">ثقة المتوسط: ${esc(ex.conf)}</span>` : ""}${r.chg1d != null ? `<span class="tag">اليوم ${r.chg1d > 0 ? "+" : ""}${r.chg1d}٪</span>` : ""}</div>
+    ${spark(r)}
+    <div class="zone"><div><small>السعر الآن</small><b>${eur(r.price_eur, r.price)}</b></div>
+      <div><small>منطقة الشراء</small><b><bdi dir="ltr">€${fmt(zl)} – ${fmt(zh)}</bdi></b><br><i><bdi dir="ltr">$${fmt(r.zone_low)} – ${fmt(r.zone_high)}</bdi></i></div>
+      <div><small>هدف المحللين</small><b>${r.target ? `<bdi dir="ltr">$${fmt(r.target)}</bdi>` : "—"}</b>${r.analysts ? `<br><i>${r.analysts} محلل</i>` : ""}</div></div>
+    <div class="why">💡 ${esc(r.why)}</div>
+    ${(r.warn || []).length ? `<div class="warn">⚠️ ${r.warn.map(esc).join(" · ")}</div>` : ""}
+    <div class="sh">${r.shariah} ${esc(r.shariah_note || "")}</div>
+    <div class="meta">${r.fpe ? `<span>مكرر الأرباح المتوقع ${r.fpe}</span>` : ""}${r.margin != null ? `<span>هامش التشغيل ${r.margin}٪</span>` : ""}${r.growth != null ? `<span>نمو الإيرادات ${r.growth}٪</span>` : ""}${r.earn_days != null ? `<span>الأرباح بعد ${r.earn_days} يوم</span>` : ""}</div>
+    ${look && r.strategies ? `<div class="why">${r.strategies.length ? "✅ يطابق: " + r.strategies.map(esc).join(" · ") : "لا يطابق أي استراتيجية اليوم."}</div>` : ""}
+    <div class="links"><a href="https://www.tradingview.com/chart/?symbol=${encodeURIComponent(r.ticker)}" target="_blank" rel="noopener">📈 الشارت</a>
+      <a href="https://zoya.finance/stocks/${encodeURIComponent(r.ticker.toLowerCase())}" target="_blank" rel="noopener">☪️ Zoya</a>
+      ${look ? `<span class="sh">فُحص ${ago(r.checked)}</span>` : ""}</div>
+  </div>`;
+}
+
+function render() {
+  const s = D.signals || [];
+  $("#upd").textContent = D.updated ? `آخر مسح: ${when(D.updated)} (${ago(D.updated)})` : "لم يتم أي مسح بعد — اضغط «امسح السوق الآن»";
+  $("#mkt").innerHTML = Object.values(D.market || {}).map(m =>
+    `<div>${esc(m.label)} <b>${m.chg1d > 0 ? "+" : ""}${m.chg1d}٪</b> · شهر ${m.chg1m > 0 ? "+" : ""}${m.chg1m}٪ ${m.above200 ? "📈" : "📉"}</div>`).join("") +
+    (D.eurusd ? `<div>€1 = $${D.eurusd}</div>` : "");
+  const buy = s.filter(r => r.action.startsWith("اشترِ")).length, prep = s.filter(r => r.action.startsWith("جهّز")).length;
+  $("#stats").innerHTML = `<div class="stat"><b style="color:var(--green)">${buy}</b><span>اشترِ الآن</span></div>
+    <div class="stat"><b style="color:var(--blue)">${prep}</b><span>جهّز أمر</span></div>
+    <div class="stat"><b>${D.stats ? fmt(D.stats.liquid) : "—"}</b><span>سهم تم فحصه</span></div>`;
+  const ch = [["all", "الكل"], ["buy", "🟢 اشترِ الآن"], ["ok", "✅ مؤكد فقط"], ["new", "✨ جديد"],
+              ["pullback", "ارتداد"], ["pead", "بعد الأرباح"], ["sale", "جودة مخفّضة"]];
+  $("#chips").innerHTML = ch.map(([k, l]) => `<button class="chip ${filt === k ? "on" : ""}" data-f="${k}">${l}</button>`).join("");
+  document.querySelectorAll(".chip").forEach(b => b.onclick = () => { filt = b.dataset.f; render(); });
+  const f = s.filter(r => filt === "all" || (filt === "buy" && r.action.startsWith("اشترِ")) || (filt === "ok" && r.shariah === "✅") ||
+                         (filt === "new" && r.is_new) || r.strategy === filt);
+  const order = r => r.action.startsWith("اشترِ") ? 0 : r.action.startsWith("جهّز") ? 1 : 2;
+  f.sort((a, b) => order(a) - order(b) || b.score - a.score);
+  $("#list").innerHTML = f.length ? f.map(r => card(r)).join("") : `<div class="empty">لا توجد فرص بهذا الفلتر اليوم.</div>`;
+  const dr = D.dropped_shariah || [];
+  $("#dropped").innerHTML = dr.length ? `<div class="box drop"><b>❌ استُبعدت شرعيًا (${dr.length}):</b> ` +
+    dr.map(x => `${esc(x.ticker)} — ${esc(x.reason)}`).join(" · ") + `</div>` : "";
+  const L = D.lookups || [];
+  $("#looks").innerHTML = L.length ? L.map(r => r.error ? `<div class="card"><b>${esc(r.ticker)}</b> — ${esc(r.error)}</div>` :
+    `<div style="font-weight:800;margin:14px 0 -4px">${esc(r.verdict || "")}</div>` + card(r, true)).join("") : `<div class="empty">لم تفحص أي سهم بعد.</div>`;
+  $("#foot").textContent = D.stats ? `فُحص ${fmt(D.stats.universe)} سهم · ${D.stats.candidates} مرشح للاستراتيجيات · استغرق ${Math.round(D.stats.seconds/60)} دقيقة` : "";
+}
+
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("nav button,.tab").forEach(x => x.classList.remove("on"));
+  b.classList.add("on"); $("#t-" + b.dataset.t).classList.add("on"); scrollTo(0, 0);
+});
+fetch("data.json?" + Date.now()).then(r => r.json()).then(d => { D = d; render(); })
+  .catch(() => { $("#upd").textContent = "لم يتم أي مسح بعد — اضغط «امسح السوق الآن»"; D = {}; render(); });
+</script>
+</body>
+</html>
