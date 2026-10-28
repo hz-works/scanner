@@ -3,8 +3,8 @@
 "ATMU|sale",
 "AVGO|sale",
 "CASY|sale",
-"CMI|sale",
 "CRUS|sale",
+"CVE|pullback",
 "GFI|sale",
 "GOLF|sale",
 "HPE|pullback",
@@ -13,6 +13,7 @@
 "LITE|pullback",
 "MWA|sale",
 "NET|pullback",
+"RBA|sale",
 "RHI|pead",
 "SNPS|pead",
 "TNGX|pullback",
@@ -24,7 +25,6 @@
 "AVGO|sale",
 "CASY|sale",
 "CHEF|pullback",
-"CMI|sale",
 "CRUS|sale",
 "CVE|pullback",
 "EXTR|sale",
@@ -41,6 +41,7 @@
 "MWA|sale",
 "NET|pullback",
 "PTGX|pullback",
+"RBA|sale",
 "RHI|pead",
 "SNPS|pead",
 "STN|sale",
@@ -50,5 +51,5 @@
 "XMTR|pullback",
 "YOU|sale"
 ],
-"date": "2026-10-28T21:09:09.194868+00:00"
+"date": "2026-10-28T22:11:56.947459+00:00"
 }
